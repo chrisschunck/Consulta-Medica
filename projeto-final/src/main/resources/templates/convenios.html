@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Convênios</title>
+<link rel="stylesheet" th:href="@{/css/style.css}"></head>
+<body>
+<header><h1>Convênios Médicos</h1><nav>
+    <a th:href="@{/}">Início</a> |
+    <a th:href="@{/pacientes}">Pacientes</a> |
+    <a th:href="@{/medicos}">Médicos</a> |
+    <a th:href="@{/consultorios}">Consultórios</a> |
+    <a th:href="@{/convenios}">Convênios</a> |
+    <a th:href="@{/agendamentos}">Agendamentos</a> |
+    <span th:if="${session.USUARIO_NOME != null}">
+        Olá, <strong th:text="${session.USUARIO_NOME}"></strong>
+        (<span th:text="${session.USUARIO_ROLE}"></span>)
+    </span> |
+    <a th:href="@{/auth/logout-web}" style="color:red">Sair</a>
+</nav></header><hr/>
+<h2>Novo Convênio</h2>
+<form th:action="@{/convenios}" th:object="${convenio}" method="post">
+    <div><label>Marca (operadora):</label><input type="text" th:field="*{marca}"/>
+    <span style="color:red" th:if="${#fields.hasErrors('marca')}" th:errors="*{marca}"></span></div>
+    <div><label>Registro ANS:</label><input type="text" th:field="*{numeroRegistroAns}"/>
+    <span style="color:red" th:if="${#fields.hasErrors('numeroRegistroAns')}" th:errors="*{numeroRegistroAns}"></span></div>
+    <div><label>Plano/Categoria:</label><input type="text" th:field="*{plano}"/>
+    <span style="color:red" th:if="${#fields.hasErrors('plano')}" th:errors="*{plano}"></span></div>
+    <div><label>Número da Carteirinha:</label><input type="text" th:field="*{numeroCarteirinha}"/>
+    <span style="color:red" th:if="${#fields.hasErrors('numeroCarteirinha')}" th:errors="*{numeroCarteirinha}"></span></div>
+    <div><label>Validade da Carteirinha:</label><input type="date" th:field="*{validadeCarteirinha}"/>
+    <span style="color:red" th:if="${#fields.hasErrors('validadeCarteirinha')}" th:errors="*{validadeCarteirinha}"></span></div>
+    <div><label>Valor Mensalidade (R$):</label><input type="number" step="0.01" th:field="*{valor}"/>
+    <span style="color:red" th:if="${#fields.hasErrors('valor')}" th:errors="*{valor}"></span></div>
+    <div><label>Ativo:</label>
+    <select th:field="*{ativo}"><option value="">Selecione</option>
+    <option value="true">Sim</option><option value="false">Não</option></select>
+    <span style="color:red" th:if="${#fields.hasErrors('ativo')}" th:errors="*{ativo}"></span></div>
+    <button type="submit">Salvar</button>
+</form><hr/>
+<h2>Lista de Convênios</h2>
+<table border="1" cellpadding="6"><thead><tr>
+    <th>ID</th><th>Marca</th><th>ANS</th><th>Plano</th><th>Carteirinha</th><th>Validade</th><th>Valor</th><th>Ativo</th>
+</tr></thead><tbody>
+<tr th:each="c : ${convenios}">
+    <td th:text="${c.id}"></td><td th:text="${c.marca}"></td><td th:text="${c.numeroRegistroAns}"></td>
+    <td th:text="${c.plano}"></td><td th:text="${c.numeroCarteirinha}"></td>
+    <td th:text="${c.validadeCarteirinha}"></td><td th:text="${c.valor}"></td><td th:text="${c.ativo}"></td>
+</tr></tbody></table>
+</body></html>

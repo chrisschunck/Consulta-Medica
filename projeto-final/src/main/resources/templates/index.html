@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Agendamento Médico</title>
+<link rel="stylesheet" th:href="@{/css/style.css}"></head>
+<body>
+<header>
+    <h1>Sistema de Agendamento Médico (Convênio)</h1>
+    <nav>
+        <a th:href="@{/}">Início</a> |
+        <a th:href="@{/pacientes}">Pacientes</a> |
+        <a th:href="@{/medicos}">Médicos</a> |
+        <a th:href="@{/consultorios}">Consultórios</a> |
+        <a th:href="@{/convenios}">Convênios</a> |
+        <a th:href="@{/agendamentos}">Agendamentos</a> |
+        <span th:if="${session.USUARIO_NOME != null}">
+        Olá, <strong th:text="${session.USUARIO_NOME}"></strong>
+        (<span th:text="${session.USUARIO_ROLE}"></span>)
+    </span> |
+        <a th:href="@{/auth/logout-web}" style="color:red">Sair</a>
+    </nav>
+</header><hr/>
+<section>
+    <h2>Painel</h2>
+    <p>Pacientes cadastrados: <strong th:text="${totalPacientes}">0</strong></p>
+    <p>Médicos cadastrados: <strong th:text="${totalMedicos}">0</strong></p>
+    <p>Agendamentos: <strong th:text="${totalAgendamentos}">0</strong></p>
+    <p>Console H2: <a th:href="@{/h2-console}">/h2-console</a></p>
+</section>
+<footer><hr/><small>FIAP - Agendamento Médico com Convênio</small></footer>
+</body></html>

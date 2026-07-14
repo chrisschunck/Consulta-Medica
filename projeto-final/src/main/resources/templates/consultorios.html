@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Consultórios</title>
+<link rel="stylesheet" th:href="@{/css/style.css}"></head>
+<body>
+<header><h1>Consultórios</h1><nav>
+    <a th:href="@{/}">Início</a> |
+    <a th:href="@{/pacientes}">Pacientes</a> |
+    <a th:href="@{/medicos}">Médicos</a> |
+    <a th:href="@{/consultorios}">Consultórios</a> |
+    <a th:href="@{/convenios}">Convênios</a> |
+    <a th:href="@{/agendamentos}">Agendamentos</a> |
+    <span th:if="${session.USUARIO_NOME != null}">
+        Olá, <strong th:text="${session.USUARIO_NOME}"></strong>
+        (<span th:text="${session.USUARIO_ROLE}"></span>)
+    </span> |
+    <a th:href="@{/auth/logout-web}" style="color:red">Sair</a>
+</nav></header><hr/>
+<h2>Novo Consultório</h2>
+<form th:action="@{/consultorios}" th:object="${consultorio}" method="post">
+    <div><label>Nome:</label><input type="text" th:field="*{nome}"/>
+    <span style="color:red" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span></div>
+    <div><label>Local:</label><input type="text" th:field="*{local}"/>
+    <span style="color:red" th:if="${#fields.hasErrors('local')}" th:errors="*{local}"></span></div>
+    <button type="submit">Salvar</button>
+</form><hr/>
+<h2>Lista de Consultórios</h2>
+<table border="1" cellpadding="6"><thead><tr><th>ID</th><th>Nome</th><th>Local</th></tr></thead>
+<tbody><tr th:each="c : ${consultorios}">
+    <td th:text="${c.id}"></td><td th:text="${c.nome}"></td><td th:text="${c.local}"></td>
+</tr></tbody></table>
+</body></html>

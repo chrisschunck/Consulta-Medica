@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Agendamento Médico</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="login-container">
+    <h1>Sistema de Agendamento Médico</h1>
+    <h2>Login</h2>
+
+    <div th:if="${erro}" style="color:red; margin-bottom:10px;">
+        <p th:text="${erro}"></p>
+    </div>
+
+    <div th:if="${sucesso}" style="color:green; margin-bottom:10px;">
+        <p th:text="${sucesso}"></p>
+    </div>
+
+    <form action="/auth/login-web" method="post">
+        <div>
+            <label>Email:</label>
+            <input type="email" name="email" required placeholder="seu@email.com"/>
+        </div>
+        <div>
+            <label>Senha:</label>
+            <input type="password" name="senha" required placeholder="******"/>
+        </div>
+        <button type="submit">Entrar</button>
+    </form>
+
+    <p>Não tem conta? <a th:href="@{/registro}">Cadastre-se aqui</a></p>
+</div>
+
+</body>
+</html>

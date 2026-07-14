@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Médicos</title>
+<link rel="stylesheet" th:href="@{/css/style.css}"></head>
+<body>
+<header><h1>Médicos</h1><nav>
+    <a th:href="@{/}">Início</a> |
+    <a th:href="@{/pacientes}">Pacientes</a> |
+    <a th:href="@{/medicos}">Médicos</a> |
+    <a th:href="@{/consultorios}">Consultórios</a> |
+    <a th:href="@{/convenios}">Convênios</a> |
+    <a th:href="@{/agendamentos}">Agendamentos</a> |
+    <span th:if="${session.USUARIO_NOME != null}">
+        Olá, <strong th:text="${session.USUARIO_NOME}"></strong>
+        (<span th:text="${session.USUARIO_ROLE}"></span>)
+    </span> |
+    <a th:href="@{/auth/logout-web}" style="color:red">Sair</a>
+</nav></header><hr/>
+<h2>Novo Médico</h2>
+<form th:action="@{/medicos}" th:object="${medico}" method="post">
+    <div><label>Nome:</label><input type="text" th:field="*{nome}"/>
+    <span style="color:red" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span></div>
+    <div><label>Email:</label><input type="email" th:field="*{email}"/>
+    <span style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span></div>
+    <div><label>Área de Atuação:</label><input type="text" th:field="*{areaAtuacao}"/>
+    <span style="color:red" th:if="${#fields.hasErrors('areaAtuacao')}" th:errors="*{areaAtuacao}"></span></div>
+    <div><label>CRM:</label><input type="text" th:field="*{crm}"/>
+    <span style="color:red" th:if="${#fields.hasErrors('crm')}" th:errors="*{crm}"></span></div>
+    <div><label>Senioridade:</label>
+    <select th:field="*{senioridade}"><option value="">Selecione</option>
+    <option th:each="s : ${senioridades}" th:value="${s}" th:text="${s}"></option></select>
+    <span style="color:red" th:if="${#fields.hasErrors('senioridade')}" th:errors="*{senioridade}"></span></div>
+    <button type="submit">Salvar</button>
+</form><hr/>
+<h2>Lista de Médicos</h2>
+<table border="1" cellpadding="6"><thead><tr>
+    <th>ID</th><th>Nome</th><th>Email</th><th>Área</th><th>CRM</th><th>Senioridade</th>
+</tr></thead><tbody>
+<tr th:each="m : ${medicos}">
+    <td th:text="${m.id}"></td><td th:text="${m.nome}"></td><td th:text="${m.email}"></td>
+    <td th:text="${m.areaAtuacao}"></td><td th:text="${m.crm}"></td><td th:text="${m.senioridade}"></td>
+</tr></tbody></table>
+</body></html>
