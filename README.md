@@ -1,9 +1,9 @@
-🩺 Agendamento Médico
+# 🩺 Agendamento Médico
 
 Projeto desenvolvido com o objetivo de aplicar conceitos de Arquitetura Hexagonal (Ports & Adapters) utilizando Spring Boot, 
 explorando boas práticas de desenvolvimento, separação de responsabilidades, autenticação com JWT, DTOs, persistência com Spring Data JPA e banco de dados H2.
 
-📌 Objective
+# 📌 Objective
 
 Gerenciar um sistema de agendamento médico através de uma API REST.
 
@@ -21,7 +21,7 @@ Realizar autenticação utilizando JWT
 Validar dados de entrada utilizando Bean Validation
 Retornar respostas padronizadas utilizando DTOs
 
-⚙️ Technologies
+# ⚙️ Technologies
 Java 17+
 Spring Boot 3.2
 Spring Web
@@ -36,7 +36,7 @@ Lombok
 Maven
 Git / GitHub
 
-🧠 Business Logic
+# 🧠 Business Logic
 
 A aplicação foi desenvolvida seguindo os princípios da Arquitetura Hexagonal, separando claramente as responsabilidades entre domínio, aplicação e infraestrutura.
 
@@ -118,7 +118,7 @@ GlobalExceptionHandler
 
 Permitindo respostas padronizadas para erros da API.
 
-📂 Project Structure
+# 📂 Project Structure
 agendamento-medico/
 
 ├── src/main/java
@@ -154,7 +154,8 @@ agendamento-medico/
 │
 ├── pom.xml
 └── README.md
-▶️ Execution
+
+# ▶️ Execution
 Pré-requisitos
 Java 17+
 Maven
