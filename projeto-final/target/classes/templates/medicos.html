@@ -20,12 +20,16 @@
 <form th:action="@{/medicos}" th:object="${medico}" method="post">
     <div><label>Nome:</label><input type="text" th:field="*{nome}"/>
     <span style="color:red" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span></div>
+    <br>
     <div><label>Email:</label><input type="email" th:field="*{email}"/>
     <span style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span></div>
+    <br>
     <div><label>Área de Atuação:</label><input type="text" th:field="*{areaAtuacao}"/>
     <span style="color:red" th:if="${#fields.hasErrors('areaAtuacao')}" th:errors="*{areaAtuacao}"></span></div>
+    <br>
     <div><label>CRM:</label><input type="text" th:field="*{crm}"/>
     <span style="color:red" th:if="${#fields.hasErrors('crm')}" th:errors="*{crm}"></span></div>
+    <br>
     <div><label>Senioridade:</label>
     <select th:field="*{senioridade}"><option value="">Selecione</option>
     <option th:each="s : ${senioridades}" th:value="${s}" th:text="${s}"></option></select>
