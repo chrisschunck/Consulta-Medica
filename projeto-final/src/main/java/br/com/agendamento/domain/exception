@@ -1,5 +1,7 @@
 package br.com.agendamento.domain.exception;
 
-public Erro(String mensagem) {
-   super(mensagem);
+public class ResourceNotFoundException extends RuntimeException {
+    public ResourceNotFoundException(String message){
+        super(message);
+    }
 }
