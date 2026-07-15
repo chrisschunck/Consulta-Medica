@@ -3,7 +3,9 @@
 <head><meta charset="UTF-8"><title>Médicos</title>
 <link rel="stylesheet" th:href="@{/css/style.css}"></head>
 <body>
-<header><h1>Médicos</h1><nav>
+<header>
+    <h1>Médicos</h1>
+    <nav>
     <a th:href="@{/}">Início</a> |
     <a th:href="@{/pacientes}">Pacientes</a> |
     <a th:href="@{/medicos}">Médicos</a> |
@@ -15,7 +17,9 @@
         (<span th:text="${session.USUARIO_ROLE}"></span>)
     </span> |
     <a th:href="@{/auth/logout-web}" style="color:red">Sair</a>
-</nav></header><hr/>
+</nav>
+</header>
+    <hr/>
 <h2>Novo Médico</h2>
 <form th:action="@{/medicos}" th:object="${medico}" method="post">
     <div><label>Nome:</label><input type="text" th:field="*{nome}"/>
