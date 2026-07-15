@@ -19,17 +19,23 @@
 <h2>Novo Convênio</h2>
 <form th:action="@{/convenios}" th:object="${convenio}" method="post">
     <div><label>Marca (operadora):</label><input type="text" th:field="*{marca}"/>
-    <span style="color:red" th:if="${#fields.hasErrors('marca')}" th:errors="*{marca}"></span></div>
+    <span style="color:red" th:if="${#fields.hasErrors('marca')}" th:errors="*{marca}"></span></div><br>
+    <br>
     <div><label>Registro ANS:</label><input type="text" th:field="*{numeroRegistroAns}"/>
-    <span style="color:red" th:if="${#fields.hasErrors('numeroRegistroAns')}" th:errors="*{numeroRegistroAns}"></span></div>
+    <span style="color:red" th:if="${#fields.hasErrors('numeroRegistroAns')}" th:errors="*{numeroRegistroAns}"></span></div><br>
+    <br>
     <div><label>Plano/Categoria:</label><input type="text" th:field="*{plano}"/>
-    <span style="color:red" th:if="${#fields.hasErrors('plano')}" th:errors="*{plano}"></span></div>
+    <span style="color:red" th:if="${#fields.hasErrors('plano')}" th:errors="*{plano}"></span></div><br>
+    <br>
     <div><label>Número da Carteirinha:</label><input type="text" th:field="*{numeroCarteirinha}"/>
-    <span style="color:red" th:if="${#fields.hasErrors('numeroCarteirinha')}" th:errors="*{numeroCarteirinha}"></span></div>
+    <span style="color:red" th:if="${#fields.hasErrors('numeroCarteirinha')}" th:errors="*{numeroCarteirinha}"></span></div><br>
+    <br>
     <div><label>Validade da Carteirinha:</label><input type="date" th:field="*{validadeCarteirinha}"/>
-    <span style="color:red" th:if="${#fields.hasErrors('validadeCarteirinha')}" th:errors="*{validadeCarteirinha}"></span></div>
+    <span style="color:red" th:if="${#fields.hasErrors('validadeCarteirinha')}" th:errors="*{validadeCarteirinha}"></span></div><br>
+    <br>
     <div><label>Valor Mensalidade (R$):</label><input type="number" step="0.01" th:field="*{valor}"/>
-    <span style="color:red" th:if="${#fields.hasErrors('valor')}" th:errors="*{valor}"></span></div>
+    <span style="color:red" th:if="${#fields.hasErrors('valor')}" th:errors="*{valor}"></span></div><br>
+    <br>
     <div><label>Ativo:</label>
     <select th:field="*{ativo}"><option value="">Selecione</option>
     <option value="true">Sim</option><option value="false">Não</option></select>
