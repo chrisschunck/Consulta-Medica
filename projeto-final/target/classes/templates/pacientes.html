@@ -19,16 +19,16 @@
 <h2>Novo Paciente</h2>
 <form th:action="@{/pacientes}" th:object="${paciente}" method="post">
     <div><label>Nome:</label><input type="text" th:field="*{nome}"/>
-    <span style="color:red" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span></div>
+    <span style="color:red" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span></div><br>
     <br>
     <div><label>Idade:</label><input type="number" th:field="*{idade}"/>
-    <span style="color:red" th:if="${#fields.hasErrors('idade')}" th:errors="*{idade}"></span></div>
+    <span style="color:red" th:if="${#fields.hasErrors('idade')}" th:errors="*{idade}"></span></div><br>
     <br>
     <div><label>Email:</label><input type="email" th:field="*{email}"/>
-    <span style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span></div>
+    <span style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span></div><br>
     <br>
     <div><label>CPF:</label><input type="text" th:field="*{cpf}"/>
-    <span style="color:red" th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}"></span></div>
+    <span style="color:red" th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}"></span></div><br>
     <br>
     <div><label>Contato:</label><input type="text" th:field="*{contato}"/>
     <span style="color:red" th:if="${#fields.hasErrors('contato')}" th:errors="*{contato}"></span></div>
