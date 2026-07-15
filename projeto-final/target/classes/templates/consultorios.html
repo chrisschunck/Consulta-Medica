@@ -20,8 +20,10 @@
 <form th:action="@{/consultorios}" th:object="${consultorio}" method="post">
     <div><label>Nome:</label><input type="text" th:field="*{nome}"/>
     <span style="color:red" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span></div>
+    <br>
     <div><label>Local:</label><input type="text" th:field="*{local}"/>
     <span style="color:red" th:if="${#fields.hasErrors('local')}" th:errors="*{local}"></span></div>
+    <br>
     <button type="submit">Salvar</button>
 </form><hr/>
 <h2>Lista de Consultórios</h2>
