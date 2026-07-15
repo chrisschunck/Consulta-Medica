@@ -1,0 +1,5 @@
+package br.com.agendamento.domain.exception;
+
+public Erro(String mensagem) {
+   super(mensagem);
+}
