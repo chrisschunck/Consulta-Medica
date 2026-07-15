@@ -22,13 +22,16 @@
 <form th:action="@{/agendamentos}" method="post">
     <div><label>Médico:</label>
     <select name="medicoId" required><option value="">Selecione</option>
-    <option th:each="m : ${medicos}" th:value="${m.id}" th:text="${m.nome + ' - ' + m.crm}"></option></select></div>
+    <option th:each="m : ${medicos}" th:value="${m.id}" th:text="${m.nome + ' - ' + m.crm}"></option></select></div><br>
+    <br>
     <div><label>Paciente:</label>
     <select name="pacienteId" required><option value="">Selecione</option>
-    <option th:each="p : ${pacientes}" th:value="${p.id}" th:text="${p.nome + ' - ' + p.cpf}"></option></select></div>
+    <option th:each="p : ${pacientes}" th:value="${p.id}" th:text="${p.nome + ' - ' + p.cpf}"></option></select></div><br>
+    <br>
     <div><label>Consultório:</label>
     <select name="consultorioId" required><option value="">Selecione</option>
-    <option th:each="c : ${consultorios}" th:value="${c.id}" th:text="${c.nome + ' - ' + c.local}"></option></select></div>
+    <option th:each="c : ${consultorios}" th:value="${c.id}" th:text="${c.nome + ' - ' + c.local}"></option></select></div><br>
+    <br>
     <div><label>Convênio (opcional):</label>
     <select name="convenioId"><option value="">Nenhum</option>
     <option th:each="cv : ${convenios}" th:value="${cv.id}" th:text="${cv.marca + ' - ' + cv.plano}"></option></select></div>
