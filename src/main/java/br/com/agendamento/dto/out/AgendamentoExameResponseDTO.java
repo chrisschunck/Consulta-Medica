@@ -11,9 +11,14 @@ import java.time.LocalDateTime;
 @Data
 public class AgendamentoExameResponseDTO {
     private Long id;
+    @Schema(description="nome do Médico agendado", example="Cardiologista")
     private MedicoJava medicoJava;
+    @Schema(description="nome do Paciente agendado", exmaple="Matheus")
     private PacienteJava pacienteJava;
+    @Schema(description="horário agendado", example="14:00")
     private LocalDateTime horarioAgendado;
+    @Schema(description="pedido de exames passado", example="Urina, abdomen total")
     private ReceitaExamesJava receitaExamesJava;
+    @Schema(description="local de realizacao de exames", example="Hospital ALbert Eisten")
     private LaboratorioHospitalJava laboratorioHospitalJava;
 }
