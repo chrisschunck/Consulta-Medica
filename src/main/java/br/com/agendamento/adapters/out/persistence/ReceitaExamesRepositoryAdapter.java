@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
+@Schema(description="classe ReceitaExamesRepository implementado repository adapter ")
 public class ReceitaExamesRepositoryAdapter implements ReceitaExamesRepositoryPort {
 
     private final ReceitaExamesJpaRepository jpaRepository;
