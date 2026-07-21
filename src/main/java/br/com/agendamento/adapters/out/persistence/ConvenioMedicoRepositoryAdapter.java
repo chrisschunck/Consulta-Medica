@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
+@Schema(description="classe ConvenioMedicoRepository para repository adapter")
 public class ConvenioMedicoRepositoryAdapter implements ConvenioMedicoRepositoryPort {
 
     private final ConvenioMedicoJpaRepository jpaRepository;
