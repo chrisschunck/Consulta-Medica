@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
+@Schema(description="classe PacienteRepository para repository adapter")
 public class PacienteRepositoryAdapter implements PacienteRepositoryPort {
 
     private final PacienteJpaRepository jpaRepository;
