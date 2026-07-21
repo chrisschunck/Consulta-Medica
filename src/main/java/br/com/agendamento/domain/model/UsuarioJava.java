@@ -6,7 +6,11 @@ import lombok.*;
 
 @Entity
 @Table(name = "usuario")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter 
+@NoArgsConstructor 
+@AllArgsConstructor
+@Schema(description="Classe Usuario transformada em tabela")
 public class UsuarioJava {
 
     public enum Role { ADMIN, RECEPCIONISTA, MEDICO }
