@@ -4,6 +4,7 @@ import br.com.agendamento.domain.model.Senioridade;
 import lombok.Data;
 
 @Data
+@Schema(description="Classe response dto Medico")
 public class MedicoResponseDTO {
 
     private Long id;
