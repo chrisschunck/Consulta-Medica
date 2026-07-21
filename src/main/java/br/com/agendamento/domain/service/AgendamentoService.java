@@ -12,6 +12,7 @@ import java.util.NoSuchElementException;
 
 @Service
 @Validated
+@Schema(description="classe Agendamento implementado UseCase para regras de negócios")
 public class AgendamentoService implements AgendamentoUseCase {
 
     private final AgendamentoRepositoryPort repositoryPort;
