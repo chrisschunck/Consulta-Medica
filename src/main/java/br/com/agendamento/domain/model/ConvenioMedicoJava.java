@@ -23,6 +23,7 @@ import java.math.BigDecimal;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(description="classe ConvenioMedico transformada em tabela como entidade")
 public class ConvenioMedicoJava {
 
     @Id
