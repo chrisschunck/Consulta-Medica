@@ -23,6 +23,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(description="classe AgendamentoExame transformada em tabela como entidade")
 public class AgendamentoExameJava {
 
     @Id
