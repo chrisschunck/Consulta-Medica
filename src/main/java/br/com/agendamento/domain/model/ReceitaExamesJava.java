@@ -19,6 +19,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(description="Classe ReceitaExames transformada em tabela")
 public class ReceitaExamesJava {
 
     @Id
