@@ -4,13 +4,14 @@ import br.com.agendamento.domain.model.AgendamentoExameJava;
 import br.com.agendamento.domain.ports.in.AgendamentoExameUseCase;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
+import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/agendamentos-exames")
+@Schema(description="classe AgendamentoExame para requisições HTTP")
 public class AgendamentoExameController {
 
     private final AgendamentoExameUseCase useCase;
