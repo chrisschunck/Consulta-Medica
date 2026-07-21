@@ -5,6 +5,7 @@ import br.com.agendamento.domain.model.ReceitaExamesJava;
 import java.util.List;
 import java.util.Optional;
 
+@Schema(description="interface ReceitaExames para saida em port repository")
 public interface ReceitaExamesRepositoryPort {
 
     ReceitaExamesJava salvar(ReceitaExamesJava entidade);
