@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(description="Classe request dto Paciente")
 public class PacienteRequestDTO {
 
     @NotNull
