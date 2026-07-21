@@ -3,6 +3,7 @@ package br.com.agendamento.dto.out;
 import lombok.Data;
 
 @Data
+@Schema(description="Classe response dto de receita de exames")
 public class ReceitaExamesResponseDTO {
     private Long id;
     @Schema(description="pedido de exames", example="Urina, abdomen total")
