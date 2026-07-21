@@ -17,6 +17,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "agendamento")
+@Schema(description="classe Agendamento transformada em tabela como entidade")
 public class AgendamentoJava {
 
     @Id
