@@ -12,6 +12,7 @@ import java.util.NoSuchElementException;
 
 @Service
 @Validated
+@Schema(description="classe Consultorio implementado UseCase para regras de negócios")
 public class ConsultorioService implements ConsultorioUseCase {
 
     private final ConsultorioRepositoryPort repositoryPort;
