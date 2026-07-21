@@ -10,7 +10,7 @@ import lombok.*;
 @Setter 
 @NoArgsConstructor 
 @AllArgsConstructor
-@Schema(description="Classe Usuario transformada em tabela")
+@Schema(description="classe Usuario transformada em tabela como entidade")
 public class UsuarioJava {
 
     public enum Role { ADMIN, RECEPCIONISTA, MEDICO }
