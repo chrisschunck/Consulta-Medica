@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/auth")
+@Schema(description="classe Auth para requisições HTTP")
 public class AuthController {
 
     private final AuthenticationManager authenticationManager;
