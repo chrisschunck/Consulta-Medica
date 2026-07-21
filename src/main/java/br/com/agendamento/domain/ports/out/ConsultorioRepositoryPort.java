@@ -5,6 +5,7 @@ import br.com.agendamento.domain.model.ConsultorioJava;
 import java.util.List;
 import java.util.Optional;
 
+@Schema(description="interface Consultorio para saida em port repository")
 public interface ConsultorioRepositoryPort {
 
     ConsultorioJava salvar(ConsultorioJava entidade);
