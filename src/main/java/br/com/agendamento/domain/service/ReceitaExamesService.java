@@ -12,6 +12,7 @@ import java.util.NoSuchElementException;
 
 @Service
 @Validated
+@Schema(description="classe ReceitaExames implementado UseCase para regras de negócios")
 public class ReceitaExamesService implements ReceitaExamesUseCase {
 
     private final ReceitaExamesRepositoryPort repositoryPort;
