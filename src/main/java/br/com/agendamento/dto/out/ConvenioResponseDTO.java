@@ -5,6 +5,8 @@ import lombok.Data;
 @Data
 public class ConvenioResponseDTO {
     private Long id;
+    @Schema(description="marca do plano de saúde", example="Porto Seguro")
     private String marca;
+    @Schema(description="valor mensalidade", example="1.399")
     private String valor;
 }
