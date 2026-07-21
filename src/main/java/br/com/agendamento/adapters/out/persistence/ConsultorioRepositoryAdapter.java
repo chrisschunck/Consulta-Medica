@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
+@Schema(description="classe ConsultorioRepository para repository adapter")
 public class ConsultorioRepositoryAdapter implements ConsultorioRepositoryPort {
 
     private final ConsultorioJpaRepository jpaRepository;
