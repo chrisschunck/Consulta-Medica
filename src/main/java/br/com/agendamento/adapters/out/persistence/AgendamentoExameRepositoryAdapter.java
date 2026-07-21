@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
+@Schema(description="classe AgendamentoExameRepository para repository adapter")
 public class AgendamentoExameRepositoryAdapter implements AgendamentoExameRepositoryPort {
 
     private final AgendamentoExameJpaRepository jpaRepository;
