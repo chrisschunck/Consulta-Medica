@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(description="Classe request dto AgendamentoExame")
 public class AgendamentoExameRequestDTO {
     @NotNull
     @NotBlank(message = "Medico é obrigatorio")
