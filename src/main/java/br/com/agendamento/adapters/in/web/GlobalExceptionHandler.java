@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 
 @RestControllerAdvice
+@Schema(description="classe GlobalExceptionHandler para comunicação HTTP")
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
