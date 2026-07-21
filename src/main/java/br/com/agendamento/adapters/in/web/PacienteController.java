@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/pacientes")
+@Schema(description="classe Paciente para requisições HTTP")
 public class PacienteController {
 
     private final PacienteUseCase useCase;
