@@ -5,6 +5,7 @@ import br.com.agendamento.domain.model.ReceitaExamesJava;
 import jakarta.validation.Valid;
 import java.util.List;
 
+@Schema(description="classe ReceitaExames para casos de uso")
 public interface ReceitaExamesUseCase {
 
     ReceitaExamesJava salvar(@Valid ReceitaExamesJava entidade);
