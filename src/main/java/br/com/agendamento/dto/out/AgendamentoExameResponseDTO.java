@@ -13,7 +13,7 @@ public class AgendamentoExameResponseDTO {
     private Long id;
     @Schema(description="nome do Médico agendado", example="Cardiologista")
     private MedicoJava medicoJava;
-    @Schema(description="nome do Paciente agendado", exmaple="Matheus")
+    @Schema(description="nome do Paciente agendado", example="Matheus")
     private PacienteJava pacienteJava;
     @Schema(description="horário agendado", example="14:00")
     private LocalDateTime horarioAgendado;
