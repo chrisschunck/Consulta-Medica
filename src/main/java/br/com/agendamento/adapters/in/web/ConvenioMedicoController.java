@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/convenios")
+@Schema(description="classe ConvenioMedico para requisições HTTP")
 public class ConvenioMedicoController {
 
     private final ConvenioMedicoUseCase useCase;
