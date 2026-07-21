@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/agendamentos")
+@Schema(description="classe Agendamento para requisições HTTP")
 public class AgendamentoController {
 
     private final AgendamentoUseCase useCase;
