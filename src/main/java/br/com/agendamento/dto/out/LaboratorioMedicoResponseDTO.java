@@ -3,7 +3,7 @@ package br.com.agendamento.dto.out;
 import lombok.Data;
 
 @Data
-@Schema(description="Classe response dto Laboratorio")
+@Schema(description="Classe response dto LaboratorioMedico")
 public class LaboratorioMedicoResponseDTO {
 
     private Long id;
