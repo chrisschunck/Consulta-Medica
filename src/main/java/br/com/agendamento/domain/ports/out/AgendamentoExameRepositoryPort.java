@@ -5,6 +5,7 @@ import br.com.agendamento.domain.model.AgendamentoExameJava;
 import java.util.List;
 import java.util.Optional;
 
+@Schema(description="interface AgendamentoExame para saida em port repository")
 public interface AgendamentoExameRepositoryPort {
 
     AgendamentoExameJava salvar(AgendamentoExameJava entidade);
