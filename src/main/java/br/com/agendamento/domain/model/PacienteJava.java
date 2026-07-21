@@ -23,7 +23,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Schema(description="classe Paciente transformada em tabela")
+@Schema(description="classe Paciente transformada em tabela como entidade")
 public class PacienteJava {
 
     @Id
