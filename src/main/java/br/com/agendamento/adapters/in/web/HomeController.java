@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 
 @Controller
+@Schema(description="classe Home para requisições HTTP")
 public class HomeController {
 
     private final PacienteUseCase pacienteUseCase;
