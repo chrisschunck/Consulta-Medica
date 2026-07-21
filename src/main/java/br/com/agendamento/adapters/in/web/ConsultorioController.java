@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/consultorios")
+@Schema(description="classe Consultorio para requisições HTTP")
 public class ConsultorioController {
 
     private final ConsultorioUseCase useCase;
