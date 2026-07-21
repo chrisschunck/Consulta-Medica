@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(description="Classe request dto Medico")
 public class MedicoRequestDTO {
 
     @NotNull
