@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/receitas-exames")
+@Schema(description="classe ReceitaExames para requisições HTTP")
 public class ReceitaExamesController {
 
     private final ReceitaExamesUseCase useCase;
