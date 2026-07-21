@@ -5,6 +5,7 @@ import br.com.agendamento.domain.model.ConvenioMedicoJava;
 import java.util.List;
 import java.util.Optional;
 
+@Schema(description="interface ConvenioMedico para saida em port repository")
 public interface ConvenioMedicoRepositoryPort {
 
     ConvenioMedicoJava salvar(ConvenioMedicoJava entidade);
