@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Schema(description="classe response dto AgendamentoExame")
 public class AgendamentoExameResponseDTO {
     private Long id;
-    @Schema(description="nome do Médico agendado", example="Cardiologista")
+    @Schema(description="nome do Médico agendado", example="Cardiologista", minlenght="3", maxlenght="30")
     private MedicoJava medicoJava;
     @Schema(description="nome do Paciente agendado", example="Matheus")
     private PacienteJava pacienteJava;
