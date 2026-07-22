@@ -11,6 +11,7 @@ import javax.management.relation.Role;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(description="Classe request dto Usuario")
 public class UsuarioRequestDTO {
 
     @NotNull
