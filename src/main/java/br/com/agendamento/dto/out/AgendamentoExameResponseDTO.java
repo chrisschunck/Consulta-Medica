@@ -9,6 +9,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
+@Schema(description="Classe response dto AgendamentoExame")
 public class AgendamentoExameResponseDTO {
     private Long id;
     @Schema(description="nome do Médico agendado", example="Cardiologista")
