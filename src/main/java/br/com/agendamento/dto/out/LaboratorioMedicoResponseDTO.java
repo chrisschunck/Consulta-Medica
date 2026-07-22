@@ -7,8 +7,8 @@ import lombok.Data;
 public class LaboratorioMedicoResponseDTO {
 
     private Long id;
-    @Schema(description="nome do local", example="Hospital Albert Eisten")
+    @Schema(description="nome do local", example="Hospital Albert Eisten", minLength= 5, maxLength= 50)
     private String nome;
-    @Schema(description="local de realização", example="Rua Mooca, 123")
+    @Schema(description="local de realização", example="Rua Mooca, 123", minLength= 5, maxLength=50)
     private String local;
 }
