@@ -43,7 +43,6 @@ public class PacienteJava {
     @Email(message = "Email invalido")
     @Size(max = 150)
     @Column(name = "email", length = 150, nullable = false, unique = true)
-    @Schema(description="email de contato do paciente", example="matheus.paciente@gmail.com")
     private String email;
 
     @Size(min = 11, max = 14, message = "CPF deve ter entre 11 e 14 caracteres")
