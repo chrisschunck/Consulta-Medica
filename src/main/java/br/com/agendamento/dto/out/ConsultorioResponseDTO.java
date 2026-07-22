@@ -3,6 +3,7 @@ package br.com.agendamento.dto.out;
 import lombok.Data;
 
 @Data
+@Schema(description="classe response dto Consultorio")
 public class ConsultorioResponseDTO {
     private Long id;
     @Schema(description="nome do Consultorio", example="Cardiologia - Mooca")
