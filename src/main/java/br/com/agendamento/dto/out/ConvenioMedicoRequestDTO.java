@@ -14,10 +14,12 @@ import java.math.BigDecimal;
 public class ConvenioMedicoRequestDTO {
 
     @NotNull
+    @NotEmpty
     @NotBlank(message = "Marca é obrigatoria")
     private String marca;
 
     @NotBlank
+    @NotEmpty
     @NotNull(message = "Valor é obrigatorio")
     private BigDecimal valor;
 }
