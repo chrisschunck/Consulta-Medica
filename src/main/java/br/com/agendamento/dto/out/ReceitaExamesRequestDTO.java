@@ -13,10 +13,12 @@ import lombok.NoArgsConstructor;
 public class ReceitaExamesRequestDTO {
 
     @NotNull
+    @NotEmpty
     @NotBlank(message = "Exame não pode ser nulo ou vazio")
     private String exame;
 
     @NotNull
+    @NotEmpty
     @NotBlank(message = "Descrição não pode ser nulo ou vazio")
     private String descricao;
 }
