@@ -5,6 +5,7 @@ import br.com.agendamento.domain.model.LaboratorioHospitalJava;
 import jakarta.validation.Valid;
 import java.util.List;
 
+@Component
 @Schema(description="interface LaboratorioHospital para casos de uso")
 public interface LaboratorioHospitalUseCase {
 
