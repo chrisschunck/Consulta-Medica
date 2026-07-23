@@ -18,22 +18,27 @@ import java.time.LocalDateTime;
 @Schema(description="Classe request dto AgendamentoExame")
 public class AgendamentoExameRequestDTO {
     @NotNull
+    @NotEmpty
     @NotBlank(message = "Medico é obrigatorio")
     private MedicoJava medicoJava;
 
     @NotNull
+    @NotEmpty
     @NotBlank(message = "Paciente é obrigatorio")
     private PacienteJava pacienteJava;
 
     @NotNull
+    @NotEmpty
     @NotBlank(message = "Horario agendado é obrigatorio")
     private LocalDateTime horarioAgendado;
 
     @NotNull
+    @NotEmpty
     @NotBlank(message = "Receita de exames é obrigatoria")
     private ReceitaExamesJava receitaExamesJava;
 
     @NotNull
+    @NotEmpty
     @NotBlank(message = "Laboratorio/Hospital é obrigatorio")
     private LaboratorioHospitalJava laboratorioHospitalJava;
 }
