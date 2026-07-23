@@ -5,6 +5,7 @@ import br.com.agendamento.domain.model.ConsultorioJava;
 import jakarta.validation.Valid;
 import java.util.List;
 
+@Component
 @Schema(description="interface Consultorio para casos de uso")
 public interface ConsultorioUseCase {
 
