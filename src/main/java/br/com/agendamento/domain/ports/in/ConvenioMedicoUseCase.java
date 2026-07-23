@@ -5,6 +5,7 @@ import br.com.agendamento.domain.model.ConvenioMedicoJava;
 import jakarta.validation.Valid;
 import java.util.List;
 
+@Component
 @Schema(description="interface ConvenioMedico para casos de uso")
 public interface ConvenioMedicoUseCase {
 
