@@ -17,7 +17,7 @@ public class UsuarioJava {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id", unique=true)
     private Long id;
 
     @Size(min = 3, max = 120)
@@ -25,10 +25,10 @@ public class UsuarioJava {
     private String nome;
 
     @Email
-    @Column(name = "email", length = 150, nullable = false, unique = true)
+    @Column(name = "email", length = 50, nullable = false, unique = true)
     private String email;
 
-    @Column(name = "senha", length = 255, nullable = false)
+    @Column(name = "senha", length = 25, nullable = false)
     private String senha;
 
     @Enumerated(EnumType.STRING)
