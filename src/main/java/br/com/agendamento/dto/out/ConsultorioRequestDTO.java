@@ -12,10 +12,12 @@ import lombok.NoArgsConstructor;
 public class ConsultorioRequestDTO {
 
     @NotNull
+    @NotEmpty
     @NotBlank(message = "Nome é obrigatorio")
     private String nome;
 
     @NotNull
+    @NotEmpty
     @NotBlank(message = "Local é obrigatorio")
     private String local;
 }
