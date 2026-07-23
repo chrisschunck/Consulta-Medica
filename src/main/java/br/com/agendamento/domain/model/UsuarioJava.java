@@ -17,7 +17,7 @@ public class UsuarioJava {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", unique=true)
+    @Column(name = "id")
     private Long id;
 
     @Size(min = 3, max = 120)
