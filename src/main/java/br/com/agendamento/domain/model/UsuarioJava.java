@@ -10,6 +10,7 @@ import lombok.*;
 @Setter 
 @NoArgsConstructor 
 @AllArgsConstructor
+@Component
 @Schema(description="classe Usuario transformada em tabela como entidade")
 public class UsuarioJava {
 
