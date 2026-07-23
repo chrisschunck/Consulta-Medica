@@ -5,6 +5,7 @@ import br.com.agendamento.domain.model.MedicoJava;
 import java.util.List;
 import java.util.Optional;
 
+@Component
 @Schema(description="interface Medico para saida em port repository")
 public interface MedicoRepositoryPort {
 
