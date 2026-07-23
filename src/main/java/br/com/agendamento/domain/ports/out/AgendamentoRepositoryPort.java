@@ -5,6 +5,7 @@ import br.com.agendamento.domain.model.AgendamentoJava;
 import java.util.List;
 import java.util.Optional;
 
+@Component
 @Schema(description="interface Agendamento para saida em port repository")
 public interface AgendamentoRepositoryPort {
 
