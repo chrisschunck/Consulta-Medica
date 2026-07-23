@@ -19,6 +19,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Component
 @Schema(description="classe Consultorio transformada em tabela como entidade")
 public class ConsultorioJava {
 
