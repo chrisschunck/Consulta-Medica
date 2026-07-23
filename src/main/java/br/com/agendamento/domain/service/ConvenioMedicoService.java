@@ -12,6 +12,7 @@ import java.util.NoSuchElementException;
 
 @Service
 @Validated
+@Component
 @Schema(description="classe ConvenioMedico implementado UseCase para regras de negócios")
 public class ConvenioMedicoService implements ConvenioMedicoUseCase {
 
