@@ -22,7 +22,7 @@ public class AgendamentoJava {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id", unique=true)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
