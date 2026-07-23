@@ -24,7 +24,7 @@ public class LaboratorioHospitalJava {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", unique=true)
+    @Column(name = "id")
     private Long id;
 
     @Size(min = 2, max = 150, message = "Nome deve ter entre 2 e 150 caracteres")
