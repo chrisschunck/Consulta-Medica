@@ -29,6 +29,7 @@ public class AgendamentoExameRequestDTO {
 
     @NotNull
     @NotEmpty
+    @FutureOrPresent
     @NotBlank(message = "Horario agendado é obrigatorio")
     private LocalDateTime horarioAgendado;
 
