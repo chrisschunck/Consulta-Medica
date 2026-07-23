@@ -28,7 +28,7 @@ public class PacienteJava {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id", unique=true)
     private Long id;
 
     @Size(min = 3, max = 120, message = "Nome deve ter entre 3 e 120 caracteres")
