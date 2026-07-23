@@ -18,22 +18,27 @@ import java.time.LocalDateTime;
 public class AgendamentoRequestDTO {
 
     @NotNull
+    @NotEmpty
     @NotBlank(message = "Medico é obrigatorio")
     private MedicoJava medicoJava;
 
     @NotNull
+    @NotEmpty
     @NotBlank(message = "Paciente é obrigatorio")
     private PacienteJava pacienteJava;
 
     @NotNull
+    @NotEmpty
     @NotBlank(message = "Horario agendado é obrigatorio")
     private LocalDateTime horarioAgendado;
 
     @NotNull
+    @NotEmpty
     @NotBlank(message = "Consultorio é obrigatorio")
     private ConsultorioJava consultorioJava;
 
     @NotBlank
+    @NotEmpty
     @NotNull(message = "Descricao é obrigatorio")
     private String descricao;
 }
