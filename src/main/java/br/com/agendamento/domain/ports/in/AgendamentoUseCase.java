@@ -5,6 +5,7 @@ import br.com.agendamento.domain.model.AgendamentoJava;
 import jakarta.validation.Valid;
 import java.util.List;
 
+@Component
 @Schema(description="interface Agendamento para casos de uso")
 public interface AgendamentoUseCase {
 
