@@ -29,6 +29,7 @@ public class UsuarioJava {
     @Column(name = "email", length = 50, nullable = false, unique = true)
     private String email;
 
+    @JsonIgnore
     @Column(name = "senha", length = 25, nullable = false)
     private String senha;
 
