@@ -46,6 +46,7 @@ public class PacienteJava {
     @Column(name = "email", length = 150, nullable = false, unique = true)
     private String email;
 
+    @JsonIgnore
     @Size(min = 11, max = 14, message = "CPF deve ter entre 11 e 14 caracteres")
     @Column(name = "cpf", length = 14, nullable = false, unique = true)
     private String cpf;
