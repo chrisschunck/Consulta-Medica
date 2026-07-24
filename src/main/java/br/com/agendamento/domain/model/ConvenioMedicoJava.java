@@ -36,6 +36,7 @@ public class ConvenioMedicoJava {
     @Column(name = "marca", length = 100, nullable = false)
     private String marca;
 
+    @JsonIgnore
     @Positive(message = "Valor deve ser positivo")
     @Column(name = "valor", nullable = false)
     private BigDecimal valor;
