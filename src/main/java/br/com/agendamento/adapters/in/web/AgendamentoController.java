@@ -20,21 +20,25 @@ public class AgendamentoController {
         this.useCase = useCase;
     }
 
+    @Operation(summary="registra um agendamento", description="salva os dados cadastrais do agendamento")
     @PostMapping
     public ResponseEntity<AgendamentoJava> salvar(@Valid @RequestBody AgendamentoJava entidade) {
         return ResponseEntity.status(HttpStatus.CREATED).body(useCase.salvar(entidade));
     }
 
+    @Operation(summary="busca um agendamento por id", description="retorna os dados cadastrais do agendamento buscado por id")
     @GetMapping("/{id}")
     public ResponseEntity<AgendamentoJava> buscarPorId(@PathVariable Long id) {
         return ResponseEntity.ok(useCase.buscarPorId(id));
     }
 
+    @Operation(summary="lista todos os agendamentos", description="retorna uma lista de todos os agendamentos disponiveis")
     @GetMapping
     public ResponseEntity<List<AgendamentoJava>> listarTodos() {
         return ResponseEntity.ok(useCase.listarTodos());
     }
 
+    @Operation(summary="deleta um agendamento por id", description="deleta os dados cadastrais de agendamento removido por id")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarPorId(@PathVariable Long id) {
         useCase.deletarPorId(id);
