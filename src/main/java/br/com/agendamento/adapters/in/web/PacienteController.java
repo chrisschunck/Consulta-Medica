@@ -20,21 +20,25 @@ public class PacienteController {
         this.useCase = useCase;
     }
 
+    @Operation(summary="registra um paciente", description="salva os dados cadastrais do paciente registrado")
     @PostMapping
     public ResponseEntity<PacienteJava> salvar(@Valid @RequestBody PacienteJava entidade) {
         return ResponseEntity.status(HttpStatus.CREATED).body(useCase.salvar(entidade));
     }
 
+    @Operation(summary="busca um paciente por id", description="retorna os dados cadastrais do paciente")
     @GetMapping("/{id}")
     public ResponseEntity<PacienteJava> buscarPorId(@PathVariable Long id) {
         return ResponseEntity.ok(useCase.buscarPorId(id));
     }
 
+    @Operation(summary="lista todos os pacientes", description="retorna os dados cadastrais do paciente")
     @GetMapping
     public ResponseEntity<List<PacienteJava>> listarTodos() {
         return ResponseEntity.ok(useCase.listarTodos());
     }
 
+    @Operation(summary="deleta o usuário por id", description="deleta os dados cadastrais do usuário removido por id")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarPorId(@PathVariable Long id) {
         useCase.deletarPorId(id);
