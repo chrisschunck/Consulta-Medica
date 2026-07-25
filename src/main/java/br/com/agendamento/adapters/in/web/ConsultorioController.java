@@ -20,21 +20,25 @@ public class ConsultorioController {
         this.useCase = useCase;
     }
 
+    @Operation(summary="registra um consultório", description="salva os dados cadastrais do consultório")
     @PostMapping
     public ResponseEntity<ConsultorioJava> salvar(@Valid @RequestBody ConsultorioJava entidade) {
         return ResponseEntity.status(HttpStatus.CREATED).body(useCase.salvar(entidade));
     }
 
+    @Operation(summary="busca um consultório por id", description="retorna os dados cadastrais do consultório buscado por id")
     @GetMapping("/{id}")
     public ResponseEntity<ConsultorioJava> buscarPorId(@PathVariable Long id) {
         return ResponseEntity.ok(useCase.buscarPorId(id));
     }
 
+    @Operation(summary="lista todos os consultórios", description="retorna uma lista de consultórios disponiveis")
     @GetMapping
     public ResponseEntity<List<ConsultorioJava>> listarTodos() {
         return ResponseEntity.ok(useCase.listarTodos());
     }
 
+    @Operation(summary="deleta um consultório por id", description="remove os dados cadastratis do consultório removido")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarPorId(@PathVariable Long id) {
         useCase.deletarPorId(id);
