@@ -20,21 +20,25 @@ public class LaboratorioHospitalController {
         this.useCase = useCase;
     }
 
+    @Operation(summary="", description="")
     @PostMapping
     public ResponseEntity<LaboratorioHospitalJava> salvar(@Valid @RequestBody LaboratorioHospitalJava entidade) {
         return ResponseEntity.status(HttpStatus.CREATED).body(useCase.salvar(entidade));
     }
 
+    @Operation=(summary="busca um laboratório ou hospital por id", description="retorna os dados cadastrais do laboratório ou hospital buscado por id")
     @GetMapping("/{id}")
     public ResponseEntity<LaboratorioHospitalJava> buscarPorId(@PathVariable Long id) {
         return ResponseEntity.ok(useCase.buscarPorId(id));
     }
 
+    @Operation(summary="lista os laboratórios ou hospitais", description="retorna uma lista de laboratórios ou hospitais")
     @GetMapping
     public ResponseEntity<List<LaboratorioHospitalJava>> listarTodos() {
         return ResponseEntity.ok(useCase.listarTodos());
     }
 
+    @Operation(summary="deleta um laboratório ou hospital por id", description="remove os dados cadastrais do laboratório ou hospital removido")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarPorId(@PathVariable Long id) {
         useCase.deletarPorId(id);
