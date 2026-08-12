@@ -61,6 +61,9 @@ public class HomeController {
 
     // ---------- PACIENTES ----------
 
+    @ApiResponse(responseCode = "201", description="valida o paciente a ser listado")
+    @ApiResponse(responseCode= "400", description="dados inválidos")
+    @APiResponse(responseCode= "404", description="paciente a ser listado não encontrado")
     @GetMapping("/pacientes")
     public String pacientes(Model model) {
         model.addAttribute("pacientes", pacienteUseCase.listarTodos());
@@ -82,6 +85,9 @@ public class HomeController {
 
     // ---------- MEDICOS ----------
 
+    @ApiResponse(responseCode = "201", description="valida a receita de exames cadastrada")
+    @ApiResponse(responseCode= "400", description="dados inválidos")
+    @ApiResponse(responseCode= "404", description="valida o médico a ser listado")
     @GetMapping("/medicos")
     public String medicos(Model model) {
         model.addAttribute("medicos", medicoUseCase.listarTodos());
@@ -126,6 +132,9 @@ public class HomeController {
 
     // ---------- CONVENIOS ----------
 
+    @ApiResponse(responseCode = "201", description="valida a receita de exames cadastrada")
+    @ApiResponse(responseCode= "400", description="dados inválidos")
+    @ApiResponse(responseCode= "404", description = "valida o convenio a ser listado")
     @GetMapping("/convenios")
     public String convenios(Model model) {
         model.addAttribute("convenios", convenioMedicoUseCase.listarTodos());
@@ -147,6 +156,9 @@ public class HomeController {
 
     // ---------- AGENDAMENTOS ----------
 
+    @ApiResponse(responseCode = "201", description="valida a receita de exames cadastrada")
+    @ApiResponse(responseCode= "400", description="dados inválidos")
+    @ApiResponse(responseCode="404", description="agendamento a ser listado não encontrado")
     @GetMapping("/agendamentos")
     public String agendamentos(Model model) {
         model.addAttribute("agendamentos", agendamentoUseCase.listarTodos());
