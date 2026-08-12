@@ -20,24 +20,35 @@ public class LaboratorioHospitalController {
         this.useCase = useCase;
     }
 
+    @ApiResponse(responseCode = "201", description="valida o Laboratório/Hospital cadastrado")
+    @ApiResponse(responseCode= "400", description="dados inválidos")
     @Operation(summary="", description="")
     @PostMapping
     public ResponseEntity<LaboratorioHospitalJava> salvar(@Valid @RequestBody LaboratorioHospitalJava entidade) {
         return ResponseEntity.status(HttpStatus.CREATED).body(useCase.salvar(entidade));
     }
 
+    @ApiResponse(responseCode = "201", description="valida o laboratório/hospital cadastrado")
+    @ApiResponse(responseCode= "400", description="dados inválidos")
+    @ApiResponse(responseCode = "404", description="laboratório/hospital a ser buscado não encontrado por id")
     @Operation=(summary="busca um laboratório ou hospital por id", description="retorna os dados cadastrais do laboratório ou hospital buscado por id")
     @GetMapping("/{id}")
     public ResponseEntity<LaboratorioHospitalJava> buscarPorId(@PathVariable Long id) {
         return ResponseEntity.ok(useCase.buscarPorId(id));
     }
 
+    @ApiResponse(responseCode = "201", description="valida o laboratório/hospital cadastrado")
+    @ApiResponse(responseCode= "400", description="dados inválidos")
+    @ApiResponse(responseCode = "404", description = "laboratório/hospital a ser listado não encontrado")
     @Operation(summary="lista os laboratórios ou hospitais", description="retorna uma lista de laboratórios ou hospitais")
     @GetMapping
     public ResponseEntity<List<LaboratorioHospitalJava>> listarTodos() {
         return ResponseEntity.ok(useCase.listarTodos());
     }
 
+    @ApiResponse(responseCode = "201", description="valida o laboratório/hospital a ser deletado")
+    @ApiResponse(responseCode= "400", description="dados inválidos")
+    @ApiResponse(responseCode = "404", description="laboratório/hospital a ser removido não encontrado")
     @Operation(summary="deleta um laboratório ou hospital por id", description="remove os dados cadastrais do laboratório ou hospital removido")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarPorId(@PathVariable Long id) {
