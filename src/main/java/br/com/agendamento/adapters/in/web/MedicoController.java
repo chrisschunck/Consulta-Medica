@@ -20,24 +20,35 @@ public class MedicoController {
         this.useCase = useCase;
     }
 
+    @ApiResponse(responseCode = "201", description="valida o médico cadastrado")
+    @ApiResponse(responseCode= "400", description="dados inválidos")
     @Operation(summary="registra um médico", description="salva os dados cadastrais de um médico")
     @PostMapping
     public ResponseEntity<MedicoJava> salvar(@Valid @RequestBody MedicoJava entidade) {
         return ResponseEntity.status(HttpStatus.CREATED).body(useCase.salvar(entidade));
     }
 
+    @ApiResponse(responseCode = "201", description="valida o médico cadastrado")
+    @ApiResponse(responseCode= "400", description="dados inválidos")
+    @ApiResponse(responseCode= "404", description="médico a ser buscado não encontrado por id")
     @Operation(summary="busca um médico por id", description="retorna os dados cadastrais do médico buscado")
     @GetMapping("/{id}")
     public ResponseEntity<MedicoJava> buscarPorId(@PathVariable Long id) {
         return ResponseEntity.ok(useCase.buscarPorId(id));
     }
 
+    @ApiResponse(responseCode = "201", description="valida o médico listado")
+    @ApiResponse(responseCode= "400", description="dados inválidos")
+    @ApiResponse(responseCode = "404", description="médico a ser listado não encontrado")
     @Operation(summary="lista todos os médicos", description="retorna uma lista de todos os médicos")
     @GetMapping
     public ResponseEntity<List<MedicoJava>> listarTodos() {
         return ResponseEntity.ok(useCase.listarTodos());
     }
 
+    @ApiResponse(responseCode = "201", description="valida o médico a ser removido")
+    @ApiResponse(responseCode= "400", description="dados inválidos")
+    @ApiResponse(responseCode="404", description="médico a ser deletado não encontrado")
     @Operation(summary="deleta um médico por id", description="deleta os dados cadastrais do médico removido")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarPorId(@PathVariable Long id) {
