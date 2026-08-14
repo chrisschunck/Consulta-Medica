@@ -87,8 +87,6 @@ public String loginWeb(@RequestParam String email,
             return "redirect:/login?erro=captcha"; // Pode passar um parâmetro específico se quiser
         }
 
-        // --- Daqui para baixo seu código continua exatamente igual ---
-
         // Autentica o usuario
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(email, senha));
