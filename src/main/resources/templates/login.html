@@ -33,6 +33,21 @@
         <button type="submit">Entrar</button>
     </form>
 
+    <script>
+  document.getElementById('formLogin').addEventListener('submit', function(e) {
+      e.preventDefault(); // Pausa o envio
+      
+      grecaptcha.ready(function() {
+          grecaptcha.execute('SUA_CHAVE_DO_SITE', {action: 'login'}).then(function(token) {
+              // Preenche o campo oculto com o token gerado
+              document.getElementById('g-recaptcha-response').value = token;
+              // Envia o formulário
+              document.getElementById('formLogin').submit();
+          });
+      });
+  });
+</script>
+
     <p>Não tem conta? <a th:href="@{/registro}">Cadastre-se aqui</a></p>
 </div>
 
