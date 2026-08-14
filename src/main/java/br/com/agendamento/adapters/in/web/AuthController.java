@@ -71,38 +71,51 @@ public class AuthController {
     // WEB — formulários Thymeleaf
     // -----------------------------------------------
 
-    @PostMapping("/login-web")
-    public String loginWeb(@RequestParam String email,
-                           @RequestParam String senha,
-                           HttpSession session) {
-        try {
-            // Autentica o usuario
-            Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(email, senha));
+    @Autowired
+private RecaptchaService recaptchaService; // 1. Injeta o serviço do reCAPTCHA
 
-            // Coloca no contexto do Spring Security (cria sessao)
-            SecurityContextHolder.getContext().setAuthentication(authentication);
-            session.setAttribute("SPRING_SECURITY_CONTEXT",
-                    SecurityContextHolder.getContext());
-
-            // Gera o token JWT e guarda na sessao tambem
-            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-            String token = tokenService.gerarToken(userDetails);
-            session.setAttribute("JWT_TOKEN", token);
-            session.setAttribute("USUARIO_EMAIL", email);
-
-            UsuarioJava usuario = usuarioRepository.findByEmail(email).orElseThrow();
-            session.setAttribute("USUARIO_ROLE", usuario.getRole().name());
-            session.setAttribute("USUARIO_NOME", usuario.getNome());
-
-            return "redirect:/";
-
-        } catch (BadCredentialsException e) {
-            return "redirect:/login?erro=true";
-        } catch (Exception e) {
-            return "redirect:/login?erro=true";
+@PostMapping("/login-web")
+public String loginWeb(@RequestParam String email,
+                       @RequestParam String senha,
+                       @RequestParam("g-recaptcha-response") String recaptchaToken, // 2. Recebe o token do front
+                       HttpSession session) {
+    try {
+        // 3. Valida o reCAPTCHA ANTES de tentar autenticar
+        boolean recaptchaValido = recaptchaService.validarRecaptcha(recaptchaToken);
+        if (!recaptchaValido) {
+            // Se o reCAPTCHA for inválido ou não marcado, redireciona com erro
+            return "redirect:/login?erro=captcha"; // Pode passar um parâmetro específico se quiser
         }
+
+        // --- Daqui para baixo seu código continua exatamente igual ---
+
+        // Autentica o usuario
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(email, senha));
+
+        // Coloca no contexto do Spring Security (cria sessao)
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        session.setAttribute("SPRING_SECURITY_CONTEXT",
+                SecurityContextHolder.getContext());
+
+        // Gera o token JWT e guarda na sessao tambem
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        String token = tokenService.gerarToken(userDetails);
+        session.setAttribute("JWT_TOKEN", token);
+        session.setAttribute("USUARIO_EMAIL", email);
+
+        UsuarioJava usuario = usuarioRepository.findByEmail(email).orElseThrow();
+        session.setAttribute("USUARIO_ROLE", usuario.getRole().name());
+        session.setAttribute("USUARIO_NOME", usuario.getNome());
+
+        return "redirect:/";
+
+    } catch (BadCredentialsException e) {
+        return "redirect:/login?erro=true";
+    } catch (Exception e) {
+        return "redirect:/login?erro=true";
     }
+}
 
     @PostMapping("/registro-web")
     public String registroWeb(@RequestParam String nome,
