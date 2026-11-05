@@ -21,6 +21,7 @@ import java.math.BigDecimal;
 @Table(name = "convenio_medico")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Component
