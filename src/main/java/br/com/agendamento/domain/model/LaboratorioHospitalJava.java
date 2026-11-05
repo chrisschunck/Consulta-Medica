@@ -17,6 +17,7 @@ import lombok.Setter;
 @Table(name = "laboratorio_hospital")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Schema(description="classe LaboratorioHospital transformada em tabela como entidade")
