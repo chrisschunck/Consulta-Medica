@@ -21,6 +21,7 @@ import lombok.Setter;
 @Table(name = "medico")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Component
