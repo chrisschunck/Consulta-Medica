@@ -21,6 +21,7 @@ import java.time.LocalDateTime;
 @Table(name = "agendamento_exame")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Schema(description="classe AgendamentoExame transformada em tabela como entidade")
