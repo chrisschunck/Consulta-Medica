@@ -17,6 +17,7 @@ import lombok.Setter;
 @Table(name = "receita_exames")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Schema(description="Classe ReceitaExames transformada em tabela como entidade")
