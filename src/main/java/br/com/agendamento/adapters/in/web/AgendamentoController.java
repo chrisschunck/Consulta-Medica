@@ -4,6 +4,8 @@ import br.com.agendamento.domain.model.AgendamentoJava;
 import br.com.agendamento.domain.ports.in.AgendamentoUseCase;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
