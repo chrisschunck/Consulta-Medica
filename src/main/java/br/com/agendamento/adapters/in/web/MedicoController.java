@@ -3,6 +3,8 @@ package br.com.agendamento.adapters.in.web;
 import br.com.agendamento.domain.model.MedicoJava;
 import br.com.agendamento.domain.ports.in.MedicoUseCase;
 import jakarta.validation.Valid;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
