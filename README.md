@@ -82,7 +82,7 @@ GlobalExceptionHandler
 Permitindo respostas padronizadas para erros da API.
 
 # ▶️ Execution
-Deploy no Railway
+Deploy fora do ar no momento no Railway
 https://consulta-medica-production-5fec.up.railway.app
 
 # 🗄️ Database
