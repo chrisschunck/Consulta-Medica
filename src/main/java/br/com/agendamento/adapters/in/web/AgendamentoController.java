@@ -22,6 +22,7 @@ public class AgendamentoController {
 
     @ApiResponses(value = {
         @ApiResponse(responseCode="200", description="Evento com sucesso", name="Response sucesso, "ok"")
+        @ApiResponse(responseCode="201", description="Evento válidado", name="Response validado")
         @ApiResponse(responseCode="400", description="Response com data invalidada", name="Requisição ruim")
         @ApiResponse(responseCode="401", description="Evento inválido ou token inacessivel", name="Response não autorizado")
         @ApiResponse(responseCode="404", description="Evento não encontrado", name="Response não encontrato")
@@ -35,6 +36,7 @@ public class AgendamentoController {
 
     @ApiResponses(value = {
         @ApiResponse(responseCode="200", description="Evento com sucesso", name="Response sucesso, "ok"")
+        @ApiResponse(responseCode="201", description="Evento válidado", name="Response validado")
         @ApiResponse(responseCode="400", description="Response com data invalidada", name="Requisição ruim")
         @ApiResponse(responseCode="401", description="Evento inválido ou token inacessivel", name="Response não autorizado")
         @ApiResponse(responseCode="404", description="Evento não encontrado", name="Response não encontrato")
@@ -48,6 +50,7 @@ public class AgendamentoController {
 
     @ApiResponses(value = {
         @ApiResponse(responseCode="200", description="Evento com sucesso", name="Response sucesso, "ok"")
+        @ApiResponse(responseCode="201", description="Evento válidado", name="Response validado")
         @ApiResponse(responseCode="400", description="Response com data invalidada", name="Requisição ruim")
         @ApiResponse(responseCode="401", description="Evento inválido ou token inacessivel", name="Response não autorizado")
         @ApiResponse(responseCode="404", description="Evento não encontrado", name="Response não encontrato")
@@ -61,6 +64,7 @@ public class AgendamentoController {
 
     @ApiResponses(value = {
         @ApiResponse(responseCode="200", description="Evento com sucesso", name="Response sucesso, "ok"")
+        @ApiResponse(responseCode="201", description="Evento válidado", name="Response validado")
         @ApiResponse(responseCode="400", description="Response com data invalidada", name="Requisição ruim")
         @ApiResponse(responseCode="401", description="Evento inválido ou token inacessivel", name="Response não autorizado")
         @ApiResponse(responseCode="404", description="Evento não encontrado", name="Response não encontrato")
