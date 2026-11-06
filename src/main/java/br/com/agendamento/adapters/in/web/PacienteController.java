@@ -20,35 +20,56 @@ public class PacienteController {
         this.useCase = useCase;
     }
 
-    @ApiResponse(responseCode = "201", description="valida o paciente cadastrado")
-    @ApiResponse(responseCode= "400", description="dados inválidos")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode="200", description="Evento com sucesso", name="Response sucesso, "ok"")
+        @ApiResponse(responseCode="201", description="Evento válidado", name="Response validado")
+        @ApiResponse(responseCode="400", description="Response com data invalidada", name="Requisição ruim")
+        @ApiResponse(responseCode="401", description="Evento inválido ou token inacessivel", name="Response não autorizado")
+        @ApiResponse(responseCode="404", description="Evento não encontrado", name="Response não encontrato")
+        @ApiResponse(responseCode="500", description="Evento sem servidor no ar", name="Response com erro no servidor")
+    })
     @Operation(summary="registra um paciente", description="salva os dados cadastrais do paciente registrado")
     @PostMapping
     public ResponseEntity<PacienteJava> salvar(@Valid @RequestBody PacienteJava entidade) {
         return ResponseEntity.status(HttpStatus.CREATED).body(useCase.salvar(entidade));
     }
 
-    @ApiResponse(responseCode = "201", description="valida o paciente buscado por id")
-    @ApiResponse(responseCode= "400", description="dados inválidos")
-    @ApiResponse(responseCode= "404", description="paciente a ser buscado não encontrado")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode="200", description="Evento com sucesso", name="Response sucesso, "ok"")
+        @ApiResponse(responseCode="201", description="Evento válidado", name="Response validado")
+        @ApiResponse(responseCode="400", description="Response com data invalidada", name="Requisição ruim")
+        @ApiResponse(responseCode="401", description="Evento inválido ou token inacessivel", name="Response não autorizado")
+        @ApiResponse(responseCode="404", description="Evento não encontrado", name="Response não encontrato")
+        @ApiResponse(responseCode="500", description="Evento sem servidor no ar", name="Response com erro no servidor")
+    })
     @Operation(summary="busca um paciente por id", description="retorna os dados cadastrais do paciente")
     @GetMapping("/{id}")
     public ResponseEntity<PacienteJava> buscarPorId(@PathVariable Long id) {
         return ResponseEntity.ok(useCase.buscarPorId(id));
     }
 
-    @ApiResponse(responseCode = "201", description="valida o paciente listado")
-    @ApiResponse(responseCode= "400", description="dados inválidos")
-    @ApiResponse(responseCode= "404", description="paciente a ser listado não encontrado")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode="200", description="Evento com sucesso", name="Response sucesso, "ok"")
+        @ApiResponse(responseCode="201", description="Evento válidado", name="Response validado")
+        @ApiResponse(responseCode="400", description="Response com data invalidada", name="Requisição ruim")
+        @ApiResponse(responseCode="401", description="Evento inválido ou token inacessivel", name="Response não autorizado")
+        @ApiResponse(responseCode="404", description="Evento não encontrado", name="Response não encontrato")
+        @ApiResponse(responseCode="500", description="Evento sem servidor no ar", name="Response com erro no servidor")
+    })
     @Operation(summary="lista todos os pacientes", description="retorna os dados cadastrais do paciente")
     @GetMapping
     public ResponseEntity<List<PacienteJava>> listarTodos() {
         return ResponseEntity.ok(useCase.listarTodos());
     }
 
-    @ApiResponse(responseCode = "201", description="valida o paciente a ser deletado")
-    @ApiResponse(responseCode= "400", description="dados inválidos")
-    @ApiResponse(responseCode="404", description="Paciente a ser deletado não encontrado")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode="200", description="Evento com sucesso", name="Response sucesso, "ok"")
+        @ApiResponse(responseCode="201", description="Evento válidado", name="Response validado")
+        @ApiResponse(responseCode="400", description="Response com data invalidada", name="Requisição ruim")
+        @ApiResponse(responseCode="401", description="Evento inválido ou token inacessivel", name="Response não autorizado")
+        @ApiResponse(responseCode="404", description="Evento não encontrado", name="Response não encontrato")
+        @ApiResponse(responseCode="500", description="Evento sem servidor no ar", name="Response com erro no servidor")
+    })
     @Operation(summary="deleta o usuário por id", description="deleta os dados cadastrais do usuário removido por id")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarPorId(@PathVariable Long id) {
