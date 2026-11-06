@@ -112,6 +112,7 @@ Critérios atendidos
 ✅ Organização em camadas
 ✅ Boas práticas de desenvolvimento
 ✅ Documentação
+✅ ApiResponses para validação em controller 
 
 # 🚀 Future Features
 Banco PostgreSQL ou Oracle
