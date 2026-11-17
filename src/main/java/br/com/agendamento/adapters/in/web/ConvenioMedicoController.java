@@ -47,7 +47,7 @@ public class ConvenioMedicoController {
     @Operation(summary="busca um convenio médico por id", description="retorna os dados cadastrais do convenio médico buscado por id")
     @GetMapping("/{id}")
     public ResponseEntity<ConvenioMedicoJava> buscarPorId(@PathVariable Long id) {
-        return ResponseEntity.ok(useCase.buscarPorId(id));
+        return ResponseEntity.ok(useCase.buscarPorId(id), HttpStatus.OK);
     }
 
     @ApiResponses(value = {
@@ -61,7 +61,7 @@ public class ConvenioMedicoController {
     @Operation(summary="lista todos os convenios médicos", description="retorna uma lista de convenios médicos disponiveis")
     @GetMapping
     public ResponseEntity<List<ConvenioMedicoJava>> listarTodos() {
-        return ResponseEntity.ok(useCase.listarTodos());
+        return ResponseEntity.ok(useCase.listarTodos(), HttpStatus.OK);
     }
 
     @ApiResponses(value = {
@@ -76,6 +76,6 @@ public class ConvenioMedicoController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarPorId(@PathVariable Long id) {
         useCase.deletarPorId(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build().HttpStatus.OK;
     }
 }
