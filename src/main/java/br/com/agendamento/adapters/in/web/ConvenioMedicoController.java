@@ -61,7 +61,7 @@ public class ConvenioMedicoController {
     @Operation(summary="lista todos os convenios médicos", description="retorna uma lista de convenios médicos disponiveis")
     @GetMapping
     public ResponseEntity<List<ConvenioMedicoJava>> listarTodos() {
-        return ResponseEntity.ok(useCase.listarTodos(), HttpStatus.OK);
+        return ResponseEntity.ok(useCase.listarTodos());
     }
 
     @ApiResponses(value = {
