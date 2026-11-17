@@ -47,7 +47,7 @@ public class ReceitaExamesController {
     @Opeariton(summary="busca um usuário por id", description="retorna os dados cadastrais do usuário buscado por ID")
     @GetMapping("/{id}")
     public ResponseEntity<ReceitaExamesJava> buscarPorId(@PathVariable Long id) {
-        return ResponseEntity.ok(useCase.buscarPorId(id));
+        return ResponseEntity.ok(useCase.buscarPorId(id), HttpStatus.OK);
     }
 
     @ApiResponses(value = {
@@ -76,6 +76,6 @@ public class ReceitaExamesController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarPorId(@PathVariable Long id) {
         useCase.deletarPorId(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build().HttpStatus.OK;
     }
 }
