@@ -61,7 +61,7 @@ public class LaboratorioHospitalController {
     @Operation(summary="lista os laboratórios ou hospitais", description="retorna uma lista de laboratórios ou hospitais")
     @GetMapping
     public ResponseEntity<List<LaboratorioHospitalJava>> listarTodos() {
-        return ResponseEntity.ok(useCase.listarTodos(), HttpStatus.OK);
+        return ResponseEntity.ok(useCase.listarTodos());
     }
 
     @ApiResponses(value = {
