@@ -47,7 +47,7 @@ public class PacienteController {
     @Operation(summary="busca um paciente por id", description="retorna os dados cadastrais do paciente")
     @GetMapping("/{id}")
     public ResponseEntity<PacienteJava> buscarPorId(@PathVariable Long id) {
-        return ResponseEntity.ok(useCase.buscarPorId(id));
+        return ResponseEntity.ok(useCase.buscarPorId(id), HttpStatus.OK);
     }
 
     @ApiResponses(value = {
@@ -76,6 +76,6 @@ public class PacienteController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarPorId(@PathVariable Long id) {
         useCase.deletarPorId(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build().HttpStatus.OK;
     }
 }
