@@ -22,57 +22,61 @@ public class AgendamentoController {
         this.useCase = useCase;
     }
 
-    @ApiResponses(value = {
-        @ApiResponse(responseCode="200", description="Evento com sucesso", name="Response sucesso, "ok"")
-        @ApiResponse(responseCode="201", description="Evento válidado", name="Response validado")
-        @ApiResponse(responseCode="400", description="Response com data invalidada", name="Requisição ruim")
-        @ApiResponse(responseCode="401", description="Evento inválido ou token inacessivel", name="Response não autorizado")
-        @ApiResponse(responseCode="404", description="Evento não encontrado", name="Response não encontrato")
-        @ApiResponse(responseCode="500", description="Evento sem servidor no ar", name="Response com erro no servidor")
-    })
+   
     @Operation(summary="registra um agendamento", description="salva os dados cadastrais do agendamento")
+    @ApiResponse(responseCode="200", description="OK")
+    @ApiResponse(responseCode="201", description="CREATED")
+    @ApiResponse(responseCode="204", description="NO CONTENT")
+    @ApiResponse(responseCode="400", description="BAD REQUEST")
+    @ApiResponse(responseCode="401", description="Unauthorized")
+    @ApiResponse(responseCode="403", description="Forbidden")
+    @ApiResponse(responseCode="404", description="Not Found")
+    @ApiResponse(responseCode="500", description="Internal Error")
     @PostMapping
     public ResponseEntity<AgendamentoJava> salvar(@Valid @RequestBody AgendamentoJava entidade) {
         return ResponseEntity.status(HttpStatus.CREATED).body(useCase.salvar(entidade));
     }
 
-    @ApiResponses(value = {
-        @ApiResponse(responseCode="200", description="Evento com sucesso", name="Response sucesso, "ok"")
-        @ApiResponse(responseCode="201", description="Evento válidado", name="Response validado")
-        @ApiResponse(responseCode="400", description="Response com data invalidada", name="Requisição ruim")
-        @ApiResponse(responseCode="401", description="Evento inválido ou token inacessivel", name="Response não autorizado")
-        @ApiResponse(responseCode="404", description="Evento não encontrado", name="Response não encontrato")
-        @ApiResponse(responseCode="500", description="Evento sem servidor no ar", name="Response com erro no servidor")
-    })
+    
     @Operation(summary="busca um agendamento por id", description="retorna os dados cadastrais do agendamento buscado por id")
+    @ApiResponse(responseCode="200", description="OK")
+    @ApiResponse(responseCode="201", description="CREATED")
+    @ApiResponse(responseCode="204", description="NO CONTENT")
+    @ApiResponse(responseCode="400", description="BAD REQUEST")
+    @ApiResponse(responseCode="401", description="Unauthorized")
+    @ApiResponse(responseCode="403", description="Forbidden")
+    @ApiResponse(responseCode="404", description="Not Found")
+    @ApiResponse(responseCode="500", description="Internal Error")
     @GetMapping("/{id}")
     public ResponseEntity<AgendamentoJava> buscarPorId(@PathVariable Long id) {
         return ResponseEntity.ok(useCase.buscarPorId(id), HttpStatus.OK);
     }
 
-    @ApiResponses(value = {
-        @ApiResponse(responseCode="200", description="Evento com sucesso", name="Response sucesso, "ok"")
-        @ApiResponse(responseCode="201", description="Evento válidado", name="Response validado")
-        @ApiResponse(responseCode="400", description="Response com data invalidada", name="Requisição ruim")
-        @ApiResponse(responseCode="401", description="Evento inválido ou token inacessivel", name="Response não autorizado")
-        @ApiResponse(responseCode="404", description="Evento não encontrado", name="Response não encontrato")
-        @ApiResponse(responseCode="500", description="Evento sem servidor no ar", name="Response com erro no servidor")
-    })
+    
     @Operation(summary="lista todos os agendamentos", description="retorna uma lista de todos os agendamentos disponiveis")
+    @ApiResponse(responseCode="200", description="OK")
+    @ApiResponse(responseCode="201", description="CREATED")
+    @ApiResponse(responseCode="204", description="NO CONTENT")
+    @ApiResponse(responseCode="400", description="BAD REQUEST")
+    @ApiResponse(responseCode="401", description="Unauthorized")
+    @ApiResponse(responseCode="403", description="Forbidden")
+    @ApiResponse(responseCode="404", description="Not Found")
+    @ApiResponse(responseCode="500", description="Internal Error")
     @GetMapping
     public ResponseEntity<List<AgendamentoJava>> listarTodos() {
         return ResponseEntity.ok(useCase.listarTodos(), HttpStatus.OK);
     }
 
-    @ApiResponses(value = {
-        @ApiResponse(responseCode="200", description="Evento com sucesso", name="Response sucesso, "ok"")
-        @ApiResponse(responseCode="201", description="Evento válidado", name="Response validado")
-        @ApiResponse(responseCode="400", description="Response com data invalidada", name="Requisição ruim")
-        @ApiResponse(responseCode="401", description="Evento inválido ou token inacessivel", name="Response não autorizado")
-        @ApiResponse(responseCode="404", description="Evento não encontrado", name="Response não encontrato")
-        @ApiResponse(responseCode="500", description="Evento sem servidor no ar", name="Response com erro no servidor")
-    })
+    
     @Operation(summary="deleta um agendamento por id", description="deleta os dados cadastrais de agendamento removido por id")
+    @ApiResponse(responseCode="200", description="OK")
+    @ApiResponse(responseCode="201", description="CREATED")
+    @ApiResponse(responseCode="204", description="NO CONTENT")
+    @ApiResponse(responseCode="400", description="BAD REQUEST")
+    @ApiResponse(responseCode="401", description="Unauthorized")
+    @ApiResponse(responseCode="403", description="Forbidden")
+    @ApiResponse(responseCode="404", description="Not Found")
+    @ApiResponse(responseCode="500", description="Internal Error")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarPorId(@PathVariable Long id) {
         useCase.deletarPorId(id);
