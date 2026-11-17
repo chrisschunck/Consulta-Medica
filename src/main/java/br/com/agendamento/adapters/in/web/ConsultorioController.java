@@ -47,7 +47,7 @@ public class ConsultorioController {
     @Operation(summary="busca um consultório por id", description="retorna os dados cadastrais do consultório buscado por id")
     @GetMapping("/{id}")
     public ResponseEntity<ConsultorioJava> buscarPorId(@PathVariable Long id) {
-        return ResponseEntity.ok(useCase.buscarPorId(id));
+        return ResponseEntity.ok(useCase.buscarPorId(id), HttpStatus.OK);
     }
 
     @ApiResponses(value = {
@@ -61,7 +61,7 @@ public class ConsultorioController {
     @Operation(summary="lista todos os consultórios", description="retorna uma lista de consultórios disponiveis")
     @GetMapping
     public ResponseEntity<List<ConsultorioJava>> listarTodos() {
-        return ResponseEntity.ok(useCase.listarTodos());
+        return ResponseEntity.ok(useCase.listarTodos(), HttpStatus.OK);
     }
 
     @ApiResponses(value = {
@@ -76,6 +76,6 @@ public class ConsultorioController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarPorId(@PathVariable Long id) {
         useCase.deletarPorId(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build().HttpStatus.OK;
     }
 }
