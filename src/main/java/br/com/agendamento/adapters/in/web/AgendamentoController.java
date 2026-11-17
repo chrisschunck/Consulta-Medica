@@ -47,7 +47,7 @@ public class AgendamentoController {
     @Operation(summary="busca um agendamento por id", description="retorna os dados cadastrais do agendamento buscado por id")
     @GetMapping("/{id}")
     public ResponseEntity<AgendamentoJava> buscarPorId(@PathVariable Long id) {
-        return ResponseEntity.ok(useCase.buscarPorId(id));
+        return ResponseEntity.ok(useCase.buscarPorId(id), HttpStatus.OK);
     }
 
     @ApiResponses(value = {
@@ -61,7 +61,7 @@ public class AgendamentoController {
     @Operation(summary="lista todos os agendamentos", description="retorna uma lista de todos os agendamentos disponiveis")
     @GetMapping
     public ResponseEntity<List<AgendamentoJava>> listarTodos() {
-        return ResponseEntity.ok(useCase.listarTodos());
+        return ResponseEntity.ok(useCase.listarTodos(), HttpStatus.OK);
     }
 
     @ApiResponses(value = {
@@ -76,6 +76,6 @@ public class AgendamentoController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletarPorId(@PathVariable Long id) {
         useCase.deletarPorId(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build().HttpStatus.OK;
     }
 }
