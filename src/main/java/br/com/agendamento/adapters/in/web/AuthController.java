@@ -136,7 +136,7 @@ public String loginWeb(@RequestParam String email,
     public String logoutWeb(HttpSession session) {
         session.invalidate();
         SecurityContextHolder.clearContext();
-        return "redirect:/login";
+        return "redirect:/login", HttpStatus.OK;
     }
 
     // -----------------------------------------------
